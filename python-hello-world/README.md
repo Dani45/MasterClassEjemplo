@@ -1,5 +1,7 @@
 # python-hello-world
 
+Basic Python Flask app in Docker which prints the hostname and IP of the container
+
 A nice and simple Python Flask application, which serves a greeting over HTTP.
 
 To build a Docker image:
@@ -23,12 +25,10 @@ If you want to deploy it to a registry (e.g. this is how I publish it to my quay
 
     docker push quay.io/tdonohue/python-hello-world:latest
 
-## Acknowledgements
+Verify the running container
+Verify by checking the container ip and hostname (ID):
 
-This example uses the nice [Python image from Bitnami][image].
-
-The _Dockerfile_ is based on [this one from Bitnami][dockerfile].
-
-
-[dockerfile]: https://github.com/bitnami/bitnami-docker-python/blob/master/example/Dockerfile
-[image]: https://bitnami.com/stack/python/containers
+$ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' my-container
+172.17.0.2
+$ docker inspect -f '{{ .Config.Hostname }}' my-container
+6095273a4e9b
