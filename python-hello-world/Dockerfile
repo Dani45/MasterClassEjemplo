@@ -12,4 +12,4 @@ EXPOSE 8080
 
 ENTRYPOINT ["python"]
 
-CMD ["./server.py"]
+CMD ["src/server.py"]
