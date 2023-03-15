@@ -1,3 +1,4 @@
+## Desde donde lo vamos a Descargar la imagen Base
 FROM python:3.6
 
 LABEL maintainer="D.L"
