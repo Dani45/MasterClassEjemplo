@@ -1,6 +1,6 @@
 ## Desde donde lo vamos a Descargar la imagen Base
 FROM python:3.6
-
+## Etiqueta para saber quien lo ha realizado
 LABEL maintainer="D.L"
 
 COPY . /app
